@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#120c0d" />
+    <meta name="description" content="Enquanto Ainda Não Tem Nome — um livro para Diana." />
+    <title>Enquanto Ainda Não Tem Nome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="glow glow-one" aria-hidden="true"></div>
+    <div class="glow glow-two" aria-hidden="true"></div>
+    <div class="dragon-sky" aria-hidden="true">
+      <svg class="dragon dragon-near" viewBox="0 0 520 300">
+        <path class="dragon-fill" d="M72 185c49-8 91-31 126-70 29 13 54 35 73 66 25-64 74-111 145-142-28 45-40 87-35 126 43-21 86-26 128-13-42 10-76 31-103 64-52-5-99 2-140 23-43-21-84-26-124-14-27-20-50-34-70-40Z"/>
+        <path class="dragon-line" d="M72 185c58-7 101-33 126-70 32 13 57 36 73 66 28-66 76-113 145-142-27 43-39 85-35 126 45-22 88-26 128-13-43 11-77 32-103 64-49-5-95 3-140 23-39-20-80-25-124-14M267 239c19 5 37 17 52 36M347 221c24 3 46 14 66 34"/>
+        <path class="dragon-eye" d="m418 171 9-4-5 9Z"/>
+      </svg>
+      <svg class="dragon dragon-far" viewBox="0 0 360 300">
+        <path class="dragon-fill" d="M68 251c28-64 28-123-1-176 42 17 74 45 97 84 13-51 42-91 88-121-14 35-15 68-2 99 29-23 58-34 88-34-24 17-42 40-53 69 22 18 36 42 41 73-33-22-65-32-97-30-52 22-106 34-161 36Z"/>
+        <path class="dragon-line" d="M68 251c28-64 28-123-1-176 43 17 75 45 97 84 14-51 43-91 88-121-14 35-15 68-2 99 30-23 59-34 88-34-25 18-43 41-53 69 23 19 36 43 41 73-33-21-65-31-97-30-53 22-106 34-161 36Z"/>
+        <path class="dragon-eye" d="m281 161 8-3-4 8Z"/>
+      </svg>
+      <span class="rune rune-one">ᚨ</span><span class="rune rune-two">ᛉ</span><span class="rune rune-three">ᛟ</span>
+    </div>
+
+    <main class="reader" aria-live="polite">
+      <header class="reader-topbar">
+        <button class="icon-button" id="restartButton" type="button" aria-label="Voltar à capa" title="Voltar à capa">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v6h6"/></svg>
+        </button>
+        <div class="chapter-label" id="chapterLabel">Uma história para você</div>
+        <button class="icon-button" id="chaptersButton" type="button" aria-label="Abrir capítulos" aria-expanded="false" title="Capítulos">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </header>
+
+      <section class="book-stage" aria-label="Mini-livro interativo">
+        <div class="book-shadow" aria-hidden="true"></div>
+        <article class="page" id="page">
+          <div class="page-inner" id="pageContent"></div>
+          <span class="page-number" id="pageNumber"></span>
+        </article>
+      </section>
+
+      <footer class="reader-controls">
+        <div class="progress" aria-label="Progresso da leitura">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="navigation">
+          <button class="nav-button secondary" id="previousButton" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+            <span>Voltar</span>
+          </button>
+          <p class="page-status" id="pageStatus">Capa</p>
+          <button class="nav-button primary" id="nextButton" type="button">
+            <span>Começar</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </div>
+      </footer>
+    </main>
+
+    <div class="chapter-backdrop" id="chapterBackdrop"></div>
+    <aside class="chapter-drawer" id="chapterDrawer" aria-hidden="true" aria-label="Navegação por capítulos">
+      <header><div><span>Mapa da história</span><h2>Capítulos</h2></div><button class="icon-button" id="closeChaptersButton" type="button" aria-label="Fechar capítulos"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button></header>
+      <nav id="chapterNavigation"></nav>
+    </aside>
+
+    <canvas id="particles" aria-hidden="true"></canvas>
+    <script src="./content.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
